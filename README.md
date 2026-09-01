@@ -2,9 +2,7 @@
 
 > Paste any code. Understand it instantly.
 
-🔗 **Live Demo:** [taskadcsrm.streamlit.app](https://taskadcsrm.streamlit.app) *(deploy via Streamlit Community Cloud)*
-
-📦 **GitHub:** [github.com/krishujha21/task_adcsrm](https://github.com/krishujha21/task_adcsrm)
+🔗 **Live Demo:** [taskadcsrm.streamlit.app](https://taskadcsrm.streamlit.app)
 
 ---
 
@@ -68,7 +66,7 @@ taskadcsrm/
    ```bash
    pip install -r requirements.txt
    ```
-
+₹
 4. **Configure your API key**
    ```bash
    cp .env.example .env
