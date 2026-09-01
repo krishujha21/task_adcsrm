@@ -2,7 +2,9 @@
 
 > Paste any code. Understand it instantly.
 
-🔗 **Live Demo:** [taskadcsrm.vercel.app](https://taskadcsrm.vercel.app)
+🔗 **Live Demo:** [taskadcsrm.streamlit.app](https://taskadcsrm.streamlit.app) *(deploy via Streamlit Community Cloud)*
+
+📦 **GitHub:** [github.com/krishujha21/task_adcsrm](https://github.com/krishujha21/task_adcsrm)
 
 ---
 
