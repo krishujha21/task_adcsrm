@@ -46,3 +46,42 @@ def query_groq(
         return chat_completion.choices[0].message.content
     except Exception as exc:
         raise RuntimeError(f"Groq API Error: {exc}") from exc
+
+
+def stream_groq(
+    system_prompt: str,
+    user_prompt: str,
+    model: str = "openai/gpt-oss-120b",
+):
+    """Stream response from Groq API token by token.
+
+    Yields string chunks as they arrive from the model.
+
+    Args:
+        system_prompt: The system-level instruction that sets the LLM's role.
+        user_prompt: The user-facing message containing the code and context.
+        model: Groq model identifier. Defaults to ``openai/gpt-oss-120b``.
+
+    Yields:
+        str: Individual text chunks from the streaming response.
+
+    Raises:
+        RuntimeError: If the Groq API streaming call fails for any reason.
+    """
+    try:
+        stream = client.chat.completions.create(
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            model=model,
+            temperature=0.4,
+            max_tokens=2048,
+            stream=True,
+        )
+        for chunk in stream:
+            delta = chunk.choices[0].delta.content
+            if delta:
+                yield delta
+    except Exception as exc:
+        raise RuntimeError(f"Groq Stream Error: {exc}") from exc
