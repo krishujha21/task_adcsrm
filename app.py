@@ -10,7 +10,7 @@ from prompts import (
 )
 
 st.set_page_config(
-    title="AI Code Explainer",
+    page_title="AI Code Explainer",
     page_icon="🧠",
     layout="wide"
 )
