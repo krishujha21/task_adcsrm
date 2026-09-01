@@ -18,7 +18,7 @@ client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 def query_groq(
     system_prompt: str,
     user_prompt: str,
-    model: str = "llama3-70b-8192",
+    model: str = "llama-3.3-70b-versatile",
 ) -> str:
     """Send a prompt pair to the Groq chat-completion endpoint.
 
