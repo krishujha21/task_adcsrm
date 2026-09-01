@@ -34,9 +34,37 @@ with st.sidebar:
     st.caption("Understand any code instantly")
     st.divider()
     
+    languages = [
+        "Auto Detect",
+        # Systems & Low-level
+        "Python", "C", "C++", "C#", "Rust", "Go",
+        # JVM
+        "Java", "Kotlin", "Scala", "Groovy",
+        # Web Frontend
+        "JavaScript", "TypeScript", "HTML", "CSS",
+        # Web Frameworks (treat as JS/TS)
+        "React (JSX)", "Vue", "Svelte",
+        # Mobile
+        "Swift", "Dart (Flutter)", "Objective-C",
+        # Scripting & Shell
+        "Bash", "PowerShell", "Perl", "Ruby",
+        # Data & ML
+        "R", "MATLAB", "Julia",
+        # Database
+        "SQL", "PostgreSQL", "MongoDB (Query)",
+        # Functional
+        "Haskell", "Elixir", "Erlang", "Clojure", "F#",
+        # Other popular
+        "PHP", "Lua", "Zig", "Assembly (x86)",
+        # Markup & Config
+        "YAML", "TOML", "JSON", "XML", "Markdown",
+        # Hardware
+        "VHDL", "Verilog",
+    ]
+    
     language = st.selectbox(
         "Language",
-        ["Auto Detect", "Python", "C++", "Java", "JavaScript", "TypeScript", "Go", "Rust"]
+        languages
     )
     
     model = st.selectbox(
@@ -50,7 +78,7 @@ with st.sidebar:
 # Main Area
 st.header("Paste your code below")
 
-code_input = st.text_area("Code", height=300, placeholder="# paste your code here...", label_visibility="collapsed")
+code_input = st.text_area("Code", height=300, placeholder="# paste your code here... supports 40+ languages", label_visibility="collapsed")
 
 # Clear results if code input changes
 current_hash = get_code_hash(code_input) if code_input else ""
