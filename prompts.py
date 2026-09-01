@@ -41,7 +41,7 @@ def get_explanation_prompt(code: str, language: str) -> tuple:
 
     user_prompt = (
         f"Language: {language}\n\n"
-        f"Code:\n```{language.lower()}\n{code}\n```"
+        f"Code:\n```{language}\n{code}\n```"
     )
 
     return system_prompt, user_prompt
@@ -76,7 +76,7 @@ def get_improvement_prompt(code: str, language: str) -> tuple:
 
     user_prompt = (
         f"Language: {language}\n\n"
-        f"Code:\n```{language.lower()}\n{code}\n```"
+        f"Code:\n```{language}\n{code}\n```"
     )
 
     return system_prompt, user_prompt
@@ -112,7 +112,7 @@ def get_optimization_prompt(code: str, language: str) -> tuple:
 
     user_prompt = (
         f"Language: {language}\n\n"
-        f"Code:\n```{language.lower()}\n{code}\n```"
+        f"Code:\n```{language}\n{code}\n```"
     )
 
     return system_prompt, user_prompt
